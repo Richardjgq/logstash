@@ -50,7 +50,7 @@ elif [[ $SELECTED_TEST_SUITE == "full" ]]; then
   bundle install
 
   echo "Acceptance: Running the tests"
-  bundle exec rspec docker/spec/full/*_spec.rb
+  JAVA_HOME=/var/lib/jenkins/workspace/elastic+logstash+master+multijob-aarch64-docker-acceptance/flavor/full/nodes/aarch64/jdk bundle exec rspec docker/spec/full/*_spec.rb
 elif [[ $SELECTED_TEST_SUITE == "ubi8" ]]; then
   echo "building ubi8 docker images"
   cd $LS_HOME
@@ -71,5 +71,5 @@ else
   bundle install
 
   echo "Acceptance: Running the tests"
-  bundle exec rspec docker/spec/**/*_spec.rb
+  JAVA_HOME=/var/lib/jenkins/workspace/elastic+logstash+master+multijob-aarch64-docker-acceptance/flavor/full/nodes/aarch64/jdk bundle exec rspec docker/spec/**/*_spec.rb
 fi
