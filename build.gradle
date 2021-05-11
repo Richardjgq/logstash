@@ -769,7 +769,7 @@ tasks.register("deleteLocalJdk", Delete) {
     String osName = selectOsType()
     String jdkFolderName = osName == "darwin" ? "jdk.app" : "jdk"
     String jdkBundlingDirectory = "${projectDir}/${jdkFolderName}"
-   // delete jdkBundlingDirectory
+    delete jdkBundlingDirectory
 }
 
 // Cannot use tarTree as it does not handle symlinks
