@@ -30,11 +30,11 @@ class LogStash::PluginManager::Command < Clamp::Command
   end
 
   def display_bundler_output(output)
-    if debug? && output
+    # if debug? && output
       # Display what bundler did in the last run
       $stderr.puts("Bundler output")
       $stderr.puts(output)
-    end
+    # end
   end
   
   # Each plugin install for a gemfile create a path with a unique id.
